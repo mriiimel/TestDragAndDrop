@@ -1,5 +1,6 @@
 public class LayersOffsetZCoord 
 {
+    //Установка минимальных и максимальных значений для отработки коллизий у объекта.
     public float HighestBackgroundLimit => 1f;
     public float LowerBackgroundLimit => -0.5F;
     public float HighestMidlegroundLimit => -0.6F;
