@@ -40,11 +40,12 @@ public class AppleController : IInitializable,ITickable
 
     private void TouchInput()
     {
+        //проверка на касание
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
             Vector3 touchPosition = _camera.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, _camera.WorldToScreenPoint(_model.AppleTransform.position).z));
-
+            //Проверка фазы касания
             switch (touch.phase)
             {
                 case TouchPhase.Began:
@@ -71,12 +72,14 @@ public class AppleController : IInitializable,ITickable
             }
         }
     }
-
+    //Проверка на касание кокретного объекта на сцене
     private bool IsTouchingApple(Vector3 touchPosition)
     {
         Collider2D col = _view.GetComponent<Collider2D>();
         return col == Physics2D.OverlapPoint(touchPosition);
     }
+
+    
     public void Initialize()
     {
         _zCoordinate = _view.transform.position.z; 
