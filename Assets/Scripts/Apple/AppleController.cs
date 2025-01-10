@@ -19,7 +19,8 @@ public class AppleController : IInitializable,ITickable
         
         
     }
-
+//Проверка позиции по Y и установка позиции Z. 
+//Проверка Z и изменение слоя у объекта
     private void ZCoordinateSeting()
     {
         _zCoordinate = _view.transform.position.y;
